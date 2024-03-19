@@ -4,7 +4,6 @@ export const Container = styled.div`
   max-width: 700px;
   margin: 0 auto;
 
-  /* Ajustar o título */
   h3 {
     font-weight: bold;
     margin: 16px auto;
@@ -17,6 +16,7 @@ export const Form = styled.form`
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
+  margin-bottom: 40px;
 `
 
 export const Input = styled.input`
@@ -25,6 +25,7 @@ export const Input = styled.input`
   border-radius: 4px;
   width: 100%;
 `
+
 export const InputSearch = styled.input`
   padding: 8px;
   border: 1px solid #ccc;

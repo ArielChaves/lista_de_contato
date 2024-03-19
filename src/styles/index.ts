@@ -1,11 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
-/*--------------------------------------------------------*/
-/*                   INICIALIZANDO                        */
-/*--------------------------------------------------------*/
-
-/***Zerando toda estilização ---------------------------- */
-
+/*** Zerando toda estilização ***/
 const EstiloGlobal = createGlobalStyle`
   * {
     margin: 0;
@@ -23,15 +18,14 @@ export const Container = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 1.625;
-  color: var(--font-color-grafit);
-  /* background: #B3D0D3; */
-  padding-top: 100px;
+  padding-top: 10px;
 
-  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+
   display: grid;
   place-items: center;
   align-items: center;
   justify-content: center;
 `
-
 export default EstiloGlobal
