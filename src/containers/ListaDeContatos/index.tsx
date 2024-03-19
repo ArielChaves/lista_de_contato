@@ -3,6 +3,7 @@ import * as S from './styles'
 const ListaDeContatos = () => (
   <S.Container>
     <h3>Contatos</h3>
+    <S.InputSearch type="text" placeholder="Buscar ...." />
     <S.Form>
       <S.Input type="text" placeholder="Nome do contato" />
       <S.Input type="tel" placeholder="(81) 9 9999-9999" />

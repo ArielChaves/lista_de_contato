@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
 
   /* Ajustar o título */
@@ -24,6 +24,13 @@ export const Input = styled.input`
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
+`
+export const InputSearch = styled.input`
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  margin: 16px 0;
 `
 
 export const Button = styled.button`
