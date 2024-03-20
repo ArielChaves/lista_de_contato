@@ -1,12 +1,5 @@
 import styled from 'styled-components'
 
-export const Card = styled.div`
-  /* background-color: #dcdde1; */
-  top: 40px;
-`
-export const ContainerMaster = styled.div`
-  /* margin-top: 50px; */
-`
 // disposição do meu formulario em linha
 export const Formulario = styled.form`
   display: flex;
@@ -29,6 +22,15 @@ export const Button = styled.button`
     background: #ffa500;
   }
 `
+// Quando o UseState for acionado no botão de Editar, ele vai trocar o nome para SALVAR e deve ter esta cor verde
+export const ButtonSalvar = styled(Button)`
+  background: #00a86b;
+  color: #ffffff;
+
+  &:hover {
+    background: #00cf83;
+  }
+`
 // Aqui passo por herança no styled() os atributos do meu Botão e trato apenas o Hover para que não fique com o mesmo hover verde
 export const CancelButton = styled(Button)`
   background-color: #dc3545;
@@ -41,7 +43,7 @@ export const InputNomeRegistrado = styled.input`
   padding: 8px;
   border: none;
   border-bottom: 1px solid #ccc;
-  /* border-radius: 4px; */
+  background-color: transparent;
   line-height: 15px;
   font-family: 'Roboto Mono', monospace;
   width: 300px;

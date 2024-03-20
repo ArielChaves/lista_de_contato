@@ -16,7 +16,8 @@ export const Button = styled.button`
   cursor: pointer;
   padding: 8px;
   border-radius: 9px;
-  width: 100px;
+  width: 78px; /* Defina o tamanho fixo desejado */
+  height: 35px; /* Defina a altura fixa desejada */
 
   &:hover {
     background: #00cf83;
@@ -25,6 +26,8 @@ export const Button = styled.button`
 // Aqui passo por herança no styled() os atributos do meu Botão e trato apenas o Hover para que não fique com o mesmo hover verde
 export const CancelButton = styled(Button)`
   background-color: #dc3545;
+  width: 78px; /* Defina o tamanho fixo desejado */
+  height: 35px; /* Defina a altura fixa desejada */
   &:hover {
     background: #e57373;
   }
@@ -45,6 +48,7 @@ export const InputSearch = styled(InputNome)`
   margin-top: 8px;
   background-color: #353b48;
   color: #f5f6fa;
+  margin-bottom: 10px;
 `
 // Aqui está recebendo por herança as informações do (InputNome) e adiciono um espacamento e margin
 export const InputTelefone = styled(InputNome)`
