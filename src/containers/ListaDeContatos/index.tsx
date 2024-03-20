@@ -1,19 +1,44 @@
+import { FormEvent, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import NovoCadastro from '../../components/Cadastro'
+import Tarefa from '../../models/Tarefa'
 import { RootReducer } from '../../store'
 import { alterarTermo } from '../../store/reducers/Filtro'
+import { cadastrar } from '../../store/reducers/atividades'
 import * as S from './styles'
 
 const ListaDeCadastro = () => {
   const { itens } = useSelector((state: RootReducer) => state.atividade)
   const { termo } = useSelector((state: RootReducer) => state.filtro)
 
-  const dispatch = useDispatch()
-
   const filtraContato = () => {
-    return itens.filter(
-      (item) => item.nomeContato.toLowerCase().search(termo.toLowerCase()) >= 0
+    return itens.filter((item) =>
+      item.nomeContato.toLowerCase().includes(termo.toLowerCase())
     )
+  }
+
+  const dispatch = useDispatch()
+  const [nomeContato, setNomeContato] = useState('')
+  const [emailContato, setEmailContato] = useState('')
+  const [phoneContato, setPhoneContato] = useState('')
+
+  const cadastrarContato = (evento: FormEvent) => {
+    evento.preventDefault()
+    const cadastroParaAdicionar: Tarefa = {
+      id: 0, // O ID será atribuído automaticamente no reducer
+      nomeContato,
+      emailContato,
+      phoneContato
+    }
+    dispatch(cadastrar(cadastroParaAdicionar))
+    // Limpa os campos após cadastrar
+    limparCampos()
+  }
+
+  const limparCampos = () => {
+    setNomeContato('')
+    setEmailContato('')
+    setPhoneContato('')
   }
 
   return (
@@ -29,17 +54,34 @@ const ListaDeCadastro = () => {
           />
         </div>
         <div>
-          <S.Formulario>
-            <S.InputNome type="text" placeholder="Nome completo" />
-            <S.InputEmail type="email" placeholder="E-mail" />
-            <S.InputTelefone type="Tel" placeholder="(99) 9 9999-9999" />
-            <S.Button type="button">Salvar</S.Button>
-            <S.CancelButton type="button">Cancelar</S.CancelButton>
+          <S.Formulario onSubmit={cadastrarContato}>
+            <S.InputNome
+              value={nomeContato}
+              onChange={({ target }) => setNomeContato(target.value)}
+              type="text"
+              placeholder="Nome completo"
+            />
+            <S.InputEmail
+              value={emailContato}
+              onChange={({ target }) => setEmailContato(target.value)}
+              type="email"
+              placeholder="E-mail"
+            />
+            <S.InputTelefone
+              value={phoneContato}
+              onChange={({ target }) => setPhoneContato(target.value)}
+              type="Tel"
+              placeholder="(99) 9 9999-9999"
+            />
+            <S.Button type="submit">Salvar</S.Button>
+            <S.CancelButton type="button" onClick={limparCampos}>
+              Cancelar
+            </S.CancelButton>
           </S.Formulario>
         </div>
         <ul>
           {filtraContato().map((p) => (
-            <li key={p.nomeContato}>
+            <li key={p.id}>
               <NovoCadastro
                 id={p.id}
                 nomeContato={p.nomeContato}
