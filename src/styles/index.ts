@@ -13,19 +13,10 @@ const EstiloGlobal = createGlobalStyle`
 `
 
 export const Container = styled.div`
-  overflow-x: hidden;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.625;
-  padding-top: 10px;
-
-  max-width: 800px;
-  margin: 0 auto;
-
-  display: grid;
-  place-items: center;
+  display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
 `
+
 export default EstiloGlobal

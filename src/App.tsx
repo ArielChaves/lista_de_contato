@@ -1,4 +1,4 @@
-import ListaDeContatos from './containers/ListaDeContatos'
+import ListaDeContatos from './Containers/ListaDeContatos'
 import EstiloGlobal, { Container } from './styles'
 
 function App() {

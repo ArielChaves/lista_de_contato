@@ -1,29 +1,23 @@
-import Contato from '../Contatos'
 import * as S from './styles'
-import { Button, CancelButton, Container } from './styles'
 
-const ListaDeContatos = () => (
-  <Container>
-    <h3>Contatos</h3>
-    <S.InputSearch type="text" placeholder="Buscar ...." />
-    <S.Form>
-      <S.Input type="text" placeholder="Nome do contato" />
-      <S.Input type="tel" placeholder="(81) 9 9999-9999" />
-      <Button type="submit">Adicionar</Button>
-      <CancelButton type="button">Cancelar</CancelButton>
-    </S.Form>
-    <ul>
-      <li>
-        <Contato />
-      </li>
-      <li>
-        <Contato />
-      </li>
-      <li>
-        <Contato />
-      </li>
-    </ul>
-  </Container>
+const ListaDeCadastro = () => (
+  <main>
+    <div>
+      <p>Cadastro</p>
+      <div>
+        <S.InputSearch type="text" placeholder="Localizar contato ...." />
+      </div>
+      <div>
+        <S.Formulario>
+          <S.InputNome type="text" placeholder="Nome completo" />
+          <S.InputEmail type="email" placeholder="E-mail" />
+          <S.InputTelefone type="Tel" placeholder="(99) 9 9999-9999" />
+          <S.Button>Cadastar</S.Button>
+          <S.CancelButton>Cancelar</S.CancelButton>
+        </S.Formulario>
+      </div>
+    </div>
+  </main>
 )
 
-export default ListaDeContatos
+export default ListaDeCadastro
