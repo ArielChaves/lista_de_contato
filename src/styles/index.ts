@@ -17,6 +17,12 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+    margin: 20px;
+  }
 `
 
 export default EstiloGlobal
