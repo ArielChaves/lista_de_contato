@@ -6,6 +6,7 @@ export const Formulario = styled.form`
   align-items: center;
   margin-top: 20px;
   gap: 3px;
+  margin-bottom: 60px;
 `
 // estilo do meu botão principal de adicionar
 export const Button = styled.button`
@@ -42,6 +43,8 @@ export const InputNome = styled.input`
 export const InputSearch = styled(InputNome)`
   width: 100%;
   margin-top: 8px;
+  background-color: #353b48;
+  color: #f5f6fa;
 `
 // Aqui está recebendo por herança as informações do (InputNome) e adiciono um espacamento e margin
 export const InputTelefone = styled(InputNome)`

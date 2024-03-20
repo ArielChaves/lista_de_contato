@@ -1,9 +1,10 @@
+import NovoCadastro from '../../components/Cadastro'
 import * as S from './styles'
 
 const ListaDeCadastro = () => (
   <main>
     <div>
-      <p>Cadastro</p>
+      <p>Lista de contatos em react</p>
       <div>
         <S.InputSearch type="text" placeholder="Localizar contato ...." />
       </div>
@@ -16,6 +17,20 @@ const ListaDeCadastro = () => (
           <S.CancelButton>Cancelar</S.CancelButton>
         </S.Formulario>
       </div>
+      <ul>
+        <li>
+          <NovoCadastro />
+        </li>
+        <li>
+          <NovoCadastro />
+        </li>
+        <li>
+          <NovoCadastro />
+        </li>
+        <li>
+          <NovoCadastro />
+        </li>
+      </ul>
     </div>
   </main>
 )
