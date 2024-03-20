@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import NovoCadastroClass from '../../models/Tarefa'
-import { remover } from '../../store/reducers/atividades'
+import { editar, remover } from '../../store/reducers/atividades'
 import * as S from './style'
 
 type Props = NovoCadastroClass
@@ -38,6 +38,13 @@ const NovoCadastro = ({
     }
   }, [phoneContatoOriginal])
 
+  function cancelarEdicao() {
+    setEstaEditando(false)
+    setnomeContato(nomeContatoOriginal),
+      setemailContato(emailContatoOriginal),
+      setphoneContato(phoneContatoOriginal)
+  }
+
   return (
     <main>
       <S.Formulario>
@@ -64,16 +71,23 @@ const NovoCadastro = ({
         />
         {estaEditando ? (
           <>
-            <S.ButtonSalvar type="button">Salvar</S.ButtonSalvar>
-            <S.CancelButton
+            <S.ButtonSalvar
               type="button"
               onClick={() => {
+                dispatch(
+                  editar({
+                    nomeContato,
+                    emailContato,
+                    phoneContato,
+                    id
+                  })
+                )
                 setEstaEditando(false)
-                setnomeContato(nomeContatoOriginal),
-                  setemailContato(emailContatoOriginal),
-                  setphoneContato(phoneContatoOriginal)
               }}
             >
+              Salvar
+            </S.ButtonSalvar>
+            <S.CancelButton type="button" onClick={cancelarEdicao}>
               Cancelar
             </S.CancelButton>
           </>

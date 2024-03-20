@@ -42,9 +42,18 @@ const atividadesSlice = createSlice({
       state.itens = [
         ...state.itens.filter((atividade) => atividade.id !== action.payload)
       ]
+    },
+    editar: (state, action: PayloadAction<Tarefa>) => {
+      const indexDaTarefa = state.itens.findIndex(
+        (p) => p.id === action.payload.id
+      )
+
+      if (indexDaTarefa >= 0) {
+        state.itens[indexDaTarefa] = action.payload
+      }
     }
   }
 })
 
-export const { remover } = atividadesSlice.actions
+export const { remover, editar } = atividadesSlice.actions
 export default atividadesSlice.reducer
