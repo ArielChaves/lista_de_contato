@@ -4,7 +4,7 @@ import { RootReducer } from '../../store'
 import * as S from './styles'
 
 const ListaDeCadastro = () => {
-  const { itnes } = useSelector((state: RootReducer) => state.atividade)
+  const { itens } = useSelector((state: RootReducer) => state.atividade)
   return (
     <main>
       <div>
@@ -22,7 +22,7 @@ const ListaDeCadastro = () => {
           </S.Formulario>
         </div>
         <ul>
-          {itnes.map((p) => (
+          {itens.map((p) => (
             <li key={p.nomeContato}>
               <NovoCadastro
                 id={p.id}
