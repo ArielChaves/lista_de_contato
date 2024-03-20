@@ -57,18 +57,21 @@ const ListaDeCadastro = () => {
           <S.Formulario onSubmit={cadastrarContato}>
             <S.InputNome
               value={nomeContato}
+              required
               onChange={({ target }) => setNomeContato(target.value)}
               type="text"
               placeholder="Nome completo"
             />
             <S.InputEmail
               value={emailContato}
+              required
               onChange={({ target }) => setEmailContato(target.value)}
               type="email"
               placeholder="E-mail"
             />
             <S.InputTelefone
               value={phoneContato}
+              required
               onChange={({ target }) => setPhoneContato(target.value)}
               type="Tel"
               placeholder="(99) 9 9999-9999"
