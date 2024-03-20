@@ -1,13 +1,20 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import NovoCadastroClass from '../../models/Tarefa'
+import { remover } from '../../store/reducers/atividades'
 import * as S from './style'
 
-type Props = {
-  nomeContato: string
-  emailContato: string
-  phoneContato: string
-}
+type Props = NovoCadastroClass
 
-const NovoCadastro = ({ nomeContato, emailContato, phoneContato }: Props) => {
+const NovoCadastro = ({
+  nomeContato,
+  emailContato,
+  phoneContato,
+  id
+}: Props) => {
+  const dispatch = useDispatch()
+
   const [estaEditando, setEstaEditando] = useState(false)
 
   return (
@@ -43,7 +50,9 @@ const NovoCadastro = ({ nomeContato, emailContato, phoneContato }: Props) => {
             <S.Button type="button" onClick={() => setEstaEditando(true)}>
               Editar
             </S.Button>
-            <S.CancelButton type="button">Remover</S.CancelButton>
+            <S.CancelButton type="button" onClick={() => dispatch(remover(id))}>
+              Remover
+            </S.CancelButton>
           </>
         )}
       </S.Formulario>
