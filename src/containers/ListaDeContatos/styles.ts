@@ -17,7 +17,7 @@ export const Button = styled.button`
   cursor: pointer;
   padding: 8px;
   border-radius: 9px;
-  width: 78px; /* Defina o tamanho fixo desejado */
+  width: 225px; /* Defina o tamanho fixo desejado */
   height: 35px; /* Defina a altura fixa desejada */
 
   &:hover {

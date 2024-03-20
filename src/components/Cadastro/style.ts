@@ -27,6 +27,8 @@ export const Button = styled.button`
 export const ButtonSalvar = styled(Button)`
   background: ${variaveis.verde};
   color: ${variaveis.branco};
+  width: 78px; /* Defina o tamanho fixo desejado */
+  height: 35px; /* Defina a altura fixa desejada */
 
   &:hover {
     background: ${variaveis.verdeHover};
@@ -35,6 +37,9 @@ export const ButtonSalvar = styled(Button)`
 // Aqui passo por função no styled() os atributos do meu Botão e trato apenas o Hover para que não fique com o mesmo hover verde
 export const CancelButton = styled(Button)`
   background-color: ${variaveis.vermelho};
+  width: 78px; /* Defina o tamanho fixo desejado */
+  height: 35px; /* Defina a altura fixa desejada */
+
   &:hover {
     background: ${variaveis.vermelhoHover};
   }

@@ -33,7 +33,7 @@ const ListaDeCadastro = () => {
             <S.InputNome type="text" placeholder="Nome completo" />
             <S.InputEmail type="email" placeholder="E-mail" />
             <S.InputTelefone type="Tel" placeholder="(99) 9 9999-9999" />
-            <S.Button type="button">Cadastrar</S.Button>
+            <S.Button type="button">Salvar</S.Button>
             <S.CancelButton type="button">Cancelar</S.CancelButton>
           </S.Formulario>
         </div>
